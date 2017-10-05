@@ -1,0 +1,6 @@
+C:\Users\Hasan\Desktop\FromGenerics\FromGenerics\bin\Debug\FromGenerics.exe.config
+C:\Users\Hasan\Desktop\FromGenerics\FromGenerics\bin\Debug\FromGenerics.exe
+C:\Users\Hasan\Desktop\FromGenerics\FromGenerics\bin\Debug\FromGenerics.pdb
+C:\Users\Hasan\Desktop\FromGenerics\FromGenerics\obj\Debug\FromGenerics.csprojResolveAssemblyReference.cache
+C:\Users\Hasan\Desktop\FromGenerics\FromGenerics\obj\Debug\FromGenerics.exe
+C:\Users\Hasan\Desktop\FromGenerics\FromGenerics\obj\Debug\FromGenerics.pdb
