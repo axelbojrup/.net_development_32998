@@ -32,17 +32,22 @@ namespace Assignment2
 // concrete  method,  checks  the  username  and  password parameters against  the member  variables and  return  true  if  they match and returns false otherwise.
         public bool CheckUserNameAndPassword(string username, string password)
         {
-            return true;
+            return (this.username == username && this.username == username);
         }
 // concrete method, returns astring containing the username and first name only.
         public string GetShortUserString()
         {
-            return "";
+            return (this.username + this.firstName);
         }
 // concrete method, updates the averageRating and ratingsCount member variables with the given parameter.
         public void AddRating(int rating)
         {
-
+            if (ratingsCount == 0) averageRating = rating;
+            else
+            {
+                averageRating = (averageRating + rating)/2;
+            }
+            ratingsCount++;
         }
 
         public abstract string GetFullUserString();

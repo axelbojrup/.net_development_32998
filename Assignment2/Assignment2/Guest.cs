@@ -20,16 +20,33 @@ namespace Assignment2
             this.dateOfBirth = dateOfBirth;
         }
 
-// writes all member variable of this Admin object (including those in the User  base  class)    to the  end of  the file  passed  in  as  a parameter  and returns true if the write was successful.
+        private string getDate()
+        {
+            return dateOfBirth.ToString("dd-mm-yyyy");
+        }
+
+        // writes all member variable of this Guest object (including those in the User  base  class) to the  end of  the file  passed  in  as  a parameter  and returns true if the write was successful.
         public bool WriteGuestToFile(System.IO.StreamWriter file)
         {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(username + ", ");
+            sb.Append(password + ", ");
+            sb.Append(firstName + ", ");
+            sb.Append(lastName + ", ");
+            sb.Append(ratingsCount + ", ");
+            sb.Append(getDate());
+            
+            file.WriteLine(sb.ToString());
+
+            // "returns true if the write was successful."
+            //successful writing??
             return true;
         }
 
 // overrides  base  class  version, returns a string with firstName, lastName, and dateOfBirth.
         public override string GetFullUserString()
         {
-            throw new NotImplementedException();
+            return firstName + lastName + getDate();
         }
     }
 }

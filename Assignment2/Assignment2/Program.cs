@@ -14,9 +14,12 @@ namespace Assignment2
         [STAThread]
         static void Main()
         {
+            UserHandler uh = new UserHandler();
+            uh.LoadAllUsers();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
         }
     }
 }

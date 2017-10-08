@@ -29,11 +29,11 @@ namespace Assignment2
         {
             return true;
         }
-        Save all user data from “Guests.txt” and 
-// “Admins.txt”  plain txt  files  using  the  WriteGuestToFile(...)  and WriteAdminToFile(...) methods below
+
+// Save all user data from “Guests.txt” and “Admins.txt”  plain txt  files  using  the  WriteGuestToFile(...)  and WriteAdminToFile(...) methods below
         public bool SaveAllUsers()
         {
-
+            return true;
         }
     }
 }
