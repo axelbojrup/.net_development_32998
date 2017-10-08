@@ -8,6 +8,8 @@ namespace Assignment2
 {
     class UserHandler
     {
+        enum AdminType { SuperAdmin, Moderator };
+
         private List<User> users;
         private User loggedInUser;
         public User LoggedInUser
@@ -22,11 +24,22 @@ namespace Assignment2
             }
         }
 
-
-        // not implemented
+        
+        //user1,password123,John,Smith,12-09-1973,7,4.2
         private System.DateTime dateToDate(string date)
         {
-            return new System.DateTime(0);
+            string[] tmp = date.Split('-');
+
+            return new System.DateTime(Convert.ToInt32(tmp[2]), Convert.ToInt32(tmp[1]), Convert.ToInt32(tmp[0]));
+        }
+
+        private Type toType(string type)
+        {
+            if (type == "SuperAdmin") return UserHandler.AdminType.SuperAdmin.GetType();
+            else
+            {
+                return UserHandler.AdminType.Moderator.GetType();
+            }
         }
 
 
@@ -40,8 +53,18 @@ namespace Assignment2
             while (!sr.EndOfStream)
             {
                 tmp = sr.ReadLine();
-                string[] info = tmp.Split(new char[]{','});
-                users.Add(new Guest(info[0], info[1], info[2], info[3], Convert.ToInt32(info[4]), Convert.ToInt32(info[5]), dateToDate(info[6])));
+                string[] info = tmp.Split(',');
+                users.Add(new Guest(info[0], info[1], info[2], info[3], Convert.ToInt32(info[5]), Convert.ToInt32(info[6]), dateToDate(info[4])));
+            }
+
+            sr = new System.IO.StreamReader("Admin.txt");
+
+            while (!sr.EndOfStream)
+            {
+                tmp = sr.ReadLine();
+                string[] info = tmp.Split(',');
+                //topAdmin,ImTheBest,Tony,Stark,SuperAdmin,10,1.25
+                users.Add(new Admin(info[0], info[1], info[2], info[3], Convert.ToInt32(info[5]), Convert.ToInt32(info[6]), toType(info[4])));
             }
 
 

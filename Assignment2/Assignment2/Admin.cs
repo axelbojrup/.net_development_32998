@@ -21,8 +21,17 @@ namespace Assignment2
             this.ratingsCount = ratingsCount;
             this.averageRating = averageRatingAdmin;
 
+
+
+
+            if (Admin.AdminType.SuperAdmin.GetType() == AdminType) adminType = Admin.AdminType.SuperAdmin;
+            else
+            {
+                adminType = Admin.AdminType.Moderator;
+            }
+
             //not sure of line below
-            if (Type.Equals(adminType.GetType(), AdminType)) adminType = Admin.AdminType.SuperAdmin;
+            //if (Type.Equals(adminType.GetType(), AdminType)) adminType = Admin.AdminType.SuperAdmin;
 
         }
 // writes all member variable of this Admin object (including those in the        User  base  class)  to the  end of  the file  passed  in  as a parameter  and returns true if the write was successful

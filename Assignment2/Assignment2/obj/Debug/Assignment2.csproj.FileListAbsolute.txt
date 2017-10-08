@@ -3,3 +3,11 @@ C:\Users\12974578\Source\Repos\.net_development_32998\Assignment2\Assignment2\bi
 C:\Users\12974578\Source\Repos\.net_development_32998\Assignment2\Assignment2\obj\Debug\Assignment2.csprojResolveAssemblyReference.cache
 C:\Users\12974578\Source\Repos\.net_development_32998\Assignment2\Assignment2\obj\Debug\Assignment2.Properties.Resources.resources
 C:\Users\12974578\Source\Repos\.net_development_32998\Assignment2\Assignment2\obj\Debug\Assignment2.csproj.GenerateResource.Cache
+C:\Users\12974578\.net_development_32998\Assignment2\Assignment2\bin\Debug\Assignment2.exe.config
+C:\Users\12974578\.net_development_32998\Assignment2\Assignment2\bin\Debug\Assignment2.exe
+C:\Users\12974578\.net_development_32998\Assignment2\Assignment2\bin\Debug\Assignment2.pdb
+C:\Users\12974578\.net_development_32998\Assignment2\Assignment2\obj\Debug\Assignment2.csprojResolveAssemblyReference.cache
+C:\Users\12974578\.net_development_32998\Assignment2\Assignment2\obj\Debug\Assignment2.Properties.Resources.resources
+C:\Users\12974578\.net_development_32998\Assignment2\Assignment2\obj\Debug\Assignment2.csproj.GenerateResource.Cache
+C:\Users\12974578\.net_development_32998\Assignment2\Assignment2\obj\Debug\Assignment2.exe
+C:\Users\12974578\.net_development_32998\Assignment2\Assignment2\obj\Debug\Assignment2.pdb

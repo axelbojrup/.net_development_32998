@@ -1,4 +1,0 @@
-user1,password123,John,Smith,12-09-1973,7,4.2
-user2,321password,Diana,Prince,29-01-1986,3,5
-jimmy,123456,Jim,Bean,07-11-1982,2,3.82
-NotBatman,UTS2017,Bruce,Wayne,24-02-2007,3,0
