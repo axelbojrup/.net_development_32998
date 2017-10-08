@@ -29,6 +29,7 @@ namespace Assignment2
         private System.DateTime dateToDate(string date)
         {
             string[] tmp = date.Split('-');
+            Console.WriteLine(date);
 
             return new System.DateTime(Convert.ToInt32(tmp[2]), Convert.ToInt32(tmp[1]), Convert.ToInt32(tmp[0]));
         }
@@ -54,7 +55,7 @@ namespace Assignment2
             {
                 tmp = sr.ReadLine();
                 string[] info = tmp.Split(',');
-                users.Add(new Guest(info[0], info[1], info[2], info[3], Convert.ToInt32(info[5]), Convert.ToInt32(info[6]), dateToDate(info[4])));
+                //users.Add(new Guest(info[0], info[1], info[2], info[3], Convert.ToInt32(info[5]), Convert.ToInt32(info[6]), dateToDate(info[4])));
             }
 
             sr = new System.IO.StreamReader("Admin.txt");
