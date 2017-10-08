@@ -1,0 +1,4 @@
+topAdmin,ImTheBest,Tony,Stark,SuperAdmin,10,1.25
+SecondAdmin,HesNotTheBest,Kara,Danvers,Moderator,11,3.8
+1Admin,2shakeAndFries2,Ronald,McDonald,SuperAdmin,4,4
+thatPerson,noTh4nk5,Kate,Middleton,Moderator,0,0
