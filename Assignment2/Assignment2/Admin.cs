@@ -29,11 +29,11 @@ namespace Assignment2
         public bool WriteAdminToFile(System.IO.StreamWriter file)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(username + ", ");
-            sb.Append(password + ", ");
-            sb.Append(firstName + ", ");
-            sb.Append(lastName + ", ");
-            sb.Append(ratingsCount + ", ");
+            sb.Append(username + ",");
+            sb.Append(password + ",");
+            sb.Append(firstName + ",");
+            sb.Append(lastName + ",");
+            sb.Append(ratingsCount + ",");
             sb.Append(averageRating);
 
             file.WriteLine(sb.ToString());
