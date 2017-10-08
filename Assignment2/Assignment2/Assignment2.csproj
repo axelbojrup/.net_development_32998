@@ -82,12 +82,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Admin.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Guests.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="bin\Debug\Admin.txt" />
   </ItemGroup>
   <ItemGroup>
