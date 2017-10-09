@@ -16,14 +16,15 @@ namespace Assignment2
             this.password = password;
             this.firstName = firstName;
             this.lastName = lastName;
+            this.averageRating = averageRating;
             this.ratingsCount = ratingsCount;
             this.dateOfBirth = dateOfBirth;
         }
 
-        private string getDate()
-        {
-            return dateOfBirth.ToString("dd-mm-yyyy");
-        }
+        //private string getDate()
+        //{
+        //    return dateOfBirth.ToString("dd-mm-yyyy");
+        //}
 
         // writes all member variable of this Guest object (including those in the User  base  class) to the  end of  the file  passed  in  as  a parameter  and returns true if the write was successful.
         public bool WriteGuestToFile(System.IO.StreamWriter file)
@@ -34,7 +35,7 @@ namespace Assignment2
             sb.Append(firstName + ",");
             sb.Append(lastName + ",");
             sb.Append(ratingsCount + ",");
-            sb.Append(getDate());
+            //sb.Append(getDate());
             
             file.WriteLine(sb.ToString());
 
@@ -46,7 +47,8 @@ namespace Assignment2
 // overrides  base  class  version, returns a string with firstName, lastName, and dateOfBirth.
         public override string GetFullUserString()
         {
-            return firstName + lastName + getDate();
+            return firstName + lastName;
+            //return firstName + lastName + getDate();
         }
     }
 }

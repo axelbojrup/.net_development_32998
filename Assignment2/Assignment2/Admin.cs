@@ -8,7 +8,7 @@ namespace Assignment2
 {
     class Admin : User
     {
-        enum AdminType { SuperAdmin, Moderator};
+        public enum AdminType { SuperAdmin, Moderator};
 
         private AdminType adminType;
 
@@ -24,7 +24,7 @@ namespace Assignment2
 
 
 
-            if (Admin.AdminType.SuperAdmin.GetType() == AdminType) adminType = Admin.AdminType.SuperAdmin;
+            if (AdminType.Equals(Admin.AdminType.SuperAdmin.GetType())) adminType = Admin.AdminType.SuperAdmin;
             else
             {
                 adminType = Admin.AdminType.Moderator;
