@@ -10,21 +10,21 @@ namespace Assignment2
     {
         private DateTime dateOfBirth;
 
-        public Guest(string username, string password, string firstName, string lastName, int ratingsCount, float averageRating, DateTime dateOfBirth)
+        public Guest(string username, string password, string firstName, string lastName, int ratingsCount, double averageRating, DateTime dateOfBirth)
         {
             this.username = username;
             this.password = password;
             this.firstName = firstName;
             this.lastName = lastName;
-            this.averageRating = averageRating;
+            this.averageRating = roundDown(averageRating);
             this.ratingsCount = ratingsCount;
             this.dateOfBirth = dateOfBirth;
         }
 
-        //private string getDate()
-        //{
-        //    return dateOfBirth.ToString("dd-mm-yyyy");
-        //}
+        private string getDate()
+        {
+            return dateOfBirth.ToString("dd-MM-yyyy");
+        }
 
         // writes all member variable of this Guest object (including those in the User  base  class) to the  end of  the file  passed  in  as  a parameter  and returns true if the write was successful.
         public bool WriteGuestToFile(System.IO.StreamWriter file)
@@ -34,10 +34,12 @@ namespace Assignment2
             sb.Append(password + ",");
             sb.Append(firstName + ",");
             sb.Append(lastName + ",");
+            sb.Append(getDate() + ",");
             sb.Append(ratingsCount + ",");
-            //sb.Append(getDate());
+            sb.Append(averageRating + "\n");
             
-            file.WriteLine(sb.ToString());
+
+            file.Write(sb.ToString());
 
             // "returns true if the write was successful."
             //successful writing??

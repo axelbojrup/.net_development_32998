@@ -29,6 +29,11 @@ namespace Assignment2
             }
         }
 
+        protected double roundDown(double d)
+        {
+            return Math.Floor(d * 100) / 100;
+        }
+
 // concrete  method,  checks  the  username  and  password parameters against  the member  variables and  return  true  if  they match and returns false otherwise.
         public bool CheckUserNameAndPassword(string username, string password)
         {
@@ -45,7 +50,7 @@ namespace Assignment2
             if (ratingsCount == 0) averageRating = rating;
             else
             {
-                averageRating = (averageRating + rating)/2;
+                averageRating = roundDown((averageRating + rating)/2);
             }
             ratingsCount++;
         }

@@ -16,9 +16,10 @@ namespace Assignment2
         {
             UserHandler uh = new UserHandler();
             uh.LoadAllUsers();
+            uh.SaveAllUsers();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Login_Screen());
 
         }
     }

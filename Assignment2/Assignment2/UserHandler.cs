@@ -42,12 +42,12 @@ namespace Assignment2
             return new System.DateTime(year, month, day);
         }
 
-        private Type toType(string type)
+        private Admin.AdminType toType(string type)
         {
-            if (type.Equals("SuperAdmin")) return Admin.AdminType.SuperAdmin.GetType();
+            if (type.Equals("SuperAdmin")) return Admin.AdminType.SuperAdmin;
             else
             {
-                return Admin.AdminType.Moderator.GetType();
+                return Admin.AdminType.Moderator;
             }
         }
 
@@ -78,7 +78,7 @@ namespace Assignment2
                     if (!double.TryParse(info[6], out averageRating)) Console.WriteLine("Conversion failed: averageRating");
 
                     DateTime tmp2 = dateToDate(date);
-                    User guest = new Guest(username, password, firstName, lastName, ratingsCount, (float)averageRating, tmp2);
+                    User guest = new Guest(username, password, firstName, lastName, ratingsCount, averageRating, tmp2);
                     users.Add(guest);
                 }
                 catch (SystemException e)
@@ -105,12 +105,12 @@ namespace Assignment2
                     string firstName = info[2];
                     string lastName = info[3];
 
-                    Type AdminType = toType(info[4]);
+                    Admin.AdminType AdminType = toType(info[4]);
 
                     if (!int.TryParse(info[5], out ratingsCount)) Console.WriteLine("Conversion failed: ratingsCount");
                     if (!double.TryParse(info[6], out averageRating)) Console.WriteLine("Conversion failed: averageRating");
 
-                    Admin admin = new Admin(username, password, firstName, lastName, ratingsCount, (float)averageRating, AdminType);
+                    Admin admin = new Admin(username, password, firstName, lastName, ratingsCount, averageRating, AdminType);
 
                     users.Add(admin);
                 }
@@ -127,6 +127,24 @@ namespace Assignment2
 // Save all user data from “Guests.txt” and “Admins.txt”  plain txt  files  using  the  WriteGuestToFile(...)  and WriteAdminToFile(...) methods below
         public bool SaveAllUsers()
         {
+            System.IO.StreamWriter fileAdmin = new System.IO.StreamWriter("testAdmin.txt");
+            System.IO.StreamWriter fileGuest = new System.IO.StreamWriter("testGuest.txt");
+
+            foreach (User u in users)
+            {
+                if (u is Admin)
+                {
+                    ((Admin)u).WriteAdminToFile(fileAdmin);
+                }
+                else
+                {
+                    ((Guest)u).WriteGuestToFile(fileGuest);
+                }
+            }
+
+            fileAdmin.Close();
+            fileGuest.Close();
+
             return true;
         }
     }

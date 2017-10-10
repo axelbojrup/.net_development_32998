@@ -12,23 +12,15 @@ namespace Assignment2
 
         private AdminType adminType;
 
-        public Admin(string username, string password, string firstName, string lastName, int ratingsCount, float averageRatingAdmin, Type AdminType)
+        public Admin(string username, string password, string firstName, string lastName, int ratingsCount, double averageRatingAdmin, AdminType AdminType)
         {
             this.username = username;
             this.password = password;
             this.firstName = firstName;
             this.lastName = lastName;
             this.ratingsCount = ratingsCount;
-            this.averageRating = averageRatingAdmin;
-
-
-
-
-            if (AdminType.Equals(Admin.AdminType.SuperAdmin.GetType())) adminType = Admin.AdminType.SuperAdmin;
-            else
-            {
-                adminType = Admin.AdminType.Moderator;
-            }
+            this.averageRating = roundDown(averageRatingAdmin);
+            this.adminType = AdminType;
 
             //not sure of line below
             //if (Type.Equals(adminType.GetType(), AdminType)) adminType = Admin.AdminType.SuperAdmin;
@@ -42,10 +34,11 @@ namespace Assignment2
             sb.Append(password + ",");
             sb.Append(firstName + ",");
             sb.Append(lastName + ",");
+            sb.Append(adminType.ToString() + ",");
             sb.Append(ratingsCount + ",");
-            sb.Append(averageRating);
+            sb.Append(averageRating + "\n");
 
-            file.WriteLine(sb.ToString());
+            file.Write(sb.ToString());
 
             // "returns true if the write was successful."
             //successful writing??
