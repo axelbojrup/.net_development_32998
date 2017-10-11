@@ -19,7 +19,7 @@ namespace Assignment2
             uh.SaveAllUsers();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login_Screen());
+            Application.Run(new LoginScreen());
 
         }
     }

@@ -83,31 +83,5 @@ namespace Assignment2.Properties {
                 return ResourceManager.GetString("Guests", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to topAdmin,ImTheBest,Tony,Stark,10,1.25
-        ///SecondAdmin,HesNotTheBest,Kara,Danvers,11,3.79999995231628
-        ///1Admin,2shakeAndFries2,Ronald,McDonald,4,4
-        ///thatPerson,noTh4nk5,Kate,Middleton,0,0
-        ///.
-        /// </summary>
-        internal static string testAdmin {
-            get {
-                return ResourceManager.GetString("testAdmin", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to user1,password123,John,Smith,7,12-09-1973
-        ///user2,321password,Diana,Prince,3,29-01-1986
-        ///jimmy,123456,Jim,Bean,2,07-11-1982
-        ///NotBatman,UTS2017,Bruce,Wayne,3,24-02-2007
-        ///.
-        /// </summary>
-        internal static string testGuest {
-            get {
-                return ResourceManager.GetString("testGuest", resourceCulture);
-            }
-        }
     }
 }
