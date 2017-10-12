@@ -18,16 +18,14 @@ namespace Assignment2
             this.uh = uh;
             InitializeComponent();
             this.label1.Text = uh.LoggedInUser.GetFullUserString();
-
-        }
-
-        private void UserListScreenGuest_Load(object sender, EventArgs e)
-        {
-            //listBox1.Items.Add();
             List<User> l = uh.retrieveGuests();
-
-            l.ForEach((User u) => { listBox1.Items.Add(u.GetShortUserString()); });
-            
+            //l.ForEach((User u) => { listView1.Items.Add(u.GetShortUserString()); });
         }
+
+
+        //
+
+        //
+        
     }
 }
