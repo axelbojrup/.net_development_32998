@@ -105,7 +105,6 @@
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 11;
             this.label4.Text = "Last Name";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // dateTimePicker1
             // 
@@ -131,6 +130,7 @@
             this.button1.TabIndex = 14;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.submit_Click);
             // 
             // button2
             // 
@@ -140,6 +140,7 @@
             this.button2.TabIndex = 15;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Cancel_click);
             // 
             // NewUserScreen
             // 

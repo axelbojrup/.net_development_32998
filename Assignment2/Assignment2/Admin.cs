@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2
 {
-    class Admin : User
+    public class Admin : User
     {
         public enum AdminType { SuperAdmin, Moderator};
 

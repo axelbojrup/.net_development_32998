@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2
 {
-    class Guest : User
+    public class Guest : User
     {
         private DateTime dateOfBirth;
 
@@ -49,8 +49,7 @@ namespace Assignment2
 // overrides  base  class  version, returns a string with firstName, lastName, and dateOfBirth.
         public override string GetFullUserString()
         {
-            return firstName + lastName;
-            //return firstName + lastName + getDate();
+            return firstName + lastName + getDate();
         }
     }
 }

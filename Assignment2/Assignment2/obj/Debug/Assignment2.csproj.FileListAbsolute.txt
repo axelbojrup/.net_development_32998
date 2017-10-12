@@ -17,3 +17,4 @@ C:\Users\12974578\Source\Repos\.net_development_32998\Assignment2\Assignment2\ob
 C:\Users\12974578\Source\Repos\.net_development_32998\Assignment2\Assignment2\obj\Debug\Assignment2.pdb
 C:\Users\12974578\Source\Repos\.net_development_32998\Assignment2\Assignment2\obj\Debug\Assignment2.LoginScreen.resources
 C:\Users\12974578\Source\Repos\.net_development_32998\Assignment2\Assignment2\obj\Debug\Assignment2.NewUserScreen.resources
+C:\Users\12974578\Source\Repos\.net_development_32998\Assignment2\Assignment2\obj\Debug\Assignment2.UserListScreenGuest.resources

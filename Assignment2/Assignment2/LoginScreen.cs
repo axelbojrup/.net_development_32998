@@ -12,20 +12,43 @@ namespace Assignment2
 {
     public partial class LoginScreen : Form
     {
-        public LoginScreen()
+        UserHandler uh;
+        public LoginScreen(UserHandler uh)
         {
+            this.uh = uh;
             InitializeComponent();
         }
 
         private void button1_click(object sender, EventArgs e)
         {
-
+            new NewUserScreen(uh).Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(textBox1.Text);
-            Console.WriteLine(textBox2.Text);
+            User u;
+            string username = textBox1.Text;
+            string password = textBox2.Text;
+
+            u = uh.login(username, password);
+            if (u != null){
+                uh.LoggedInUser = u;
+                new UserListScreenGuest(uh).Show();
+                this.label1.Text = "";
+                this.textBox1.Text = "";
+                this.textBox2.Text = "";
+
+            }
+            else
+            {
+                this.label1.Text = "Incorrect password or username.";
+                this.textBox1.Text = "";
+                this.textBox2.Text = "";
+            }
+
+            
+
+            
         }
 
 

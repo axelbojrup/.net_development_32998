@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2
 {
-    class UserHandler
+    public class UserHandler
     {
 
         private List<User> users;
@@ -50,6 +50,26 @@ namespace Assignment2
                 return Admin.AdminType.Moderator;
             }
         }
+
+        public void addGuest(Guest g)
+        {
+            users.Add(g);
+        }
+
+        public User login(string username, string password)
+        {
+            foreach(User u in users)
+            {
+                if (u.CheckUserNameAndPassword(username, password)) return u;
+            }
+            return null;
+        }
+
+        public List<User> retrieveGuests()
+        {
+            return users.FindAll((User u) => { return (u is Guest); });
+        }
+        
 
 
 // Load all user data from “Guests.txt” and “Admins.txt” plain text files and stores them in the User  List member variable.

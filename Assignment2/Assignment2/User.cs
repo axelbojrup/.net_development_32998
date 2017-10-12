@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment2
 {
-    abstract class User
+    public abstract class User
     {
         protected string username, password, firstName, lastName;
         protected int ratingsCount;
