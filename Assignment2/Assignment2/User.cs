@@ -42,7 +42,7 @@ namespace Assignment2
 // concrete method, returns astring containing the username and first name only.
         public string GetShortUserString()
         {
-            return (this.username + this.firstName);
+            return (this.username + "," + this.firstName);
         }
 // concrete method, updates the averageRating and ratingsCount member variables with the given parameter.
         public void AddRating(int rating)
