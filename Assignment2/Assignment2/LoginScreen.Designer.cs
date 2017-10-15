@@ -69,20 +69,20 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Password";
             // 
-            // button1
+            // button4
             // 
             this.button1.Location = new System.Drawing.Point(194, 205);
-            this.button1.Name = "button1";
+            this.button1.Name = "button4";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
             this.button1.Text = "New user";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_click);
             // 
-            // button2
+            // button4
             // 
             this.button2.Location = new System.Drawing.Point(194, 234);
-            this.button2.Name = "button2";
+            this.button2.Name = "button4";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 6;
             this.button2.Text = "Login";

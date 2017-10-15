@@ -10,34 +10,32 @@ using System.Windows.Forms;
 
 namespace Assignment2
 {
-    public partial class UserListScreenGuest : Form
+    public partial class UserListScreenModerator : Form
     {
         UserHandler uh;
-        public UserListScreenGuest(UserHandler uh)
+        public UserListScreenModerator(UserHandler uh)
         {
-            this.uh = uh;
             InitializeComponent();
+            this.uh = uh;
             addListViewContent();
-
-
         }
 
         public void addListViewContent()
         {
-            this.label1.Text = uh.LoggedInUser.GetFullUserString();
-            List<User> l = uh.retrieveGuests();
+            this.label2.Text = uh.LoggedInUser.GetFullUserString();
+            List<User> l = uh.retrieveAll();
 
             int i = 0;
             while (i < l.Count())
             {
                 if (!uh.LoggedInUser.GetShortUserString().Equals(l[i].GetShortUserString()))
                 {
-                    ListViewItem item = new ListViewItem(l[i].GetShortUserString());
+                    ListViewItem item = new ListViewItem(l[i].GetFullUserString());
                     item.SubItems.Add(l[i].AverageRating.ToString());
                     item.SubItems.Add(l[i].RatingsCount.ToString());
 
 
-                    this.listView1.Items.Add(item);
+                    this.listView4.Items.Add(item);
                 }
                 i++;
             }
@@ -45,15 +43,15 @@ namespace Assignment2
 
         public void reload()
         {
-            this.listView1.Items.Clear();
+            this.listView4.Items.Clear();
             addListViewContent();
         }
-        
 
-        private void button1_click(object sender, EventArgs e)
+
+        private void button4_click(object sender, EventArgs e)
         {
             List<ListViewItem> checkedUsers = new List<ListViewItem>();
-            foreach (ListViewItem i in this.listView1.Items)
+            foreach (ListViewItem i in this.listView4.Items)
             {
                 if (i.Checked) checkedUsers.Add(i);
             }

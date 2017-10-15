@@ -10,7 +10,7 @@ namespace Assignment2
     {
         public enum AdminType { SuperAdmin, Moderator};
 
-        private AdminType adminType;
+        public AdminType adminType;
 
         public Admin(string username, string password, string firstName, string lastName, int ratingsCount, double averageRatingAdmin, AdminType AdminType)
         {
@@ -26,6 +26,7 @@ namespace Assignment2
             //if (Type.Equals(adminType.GetType(), AdminType)) adminType = Admin.AdminType.SuperAdmin;
 
         }
+
 // writes all member variable of this Admin object (including those in the        User  base  class)  to the  end of  the file  passed  in  as a parameter  and returns true if the write was successful
         public bool WriteAdminToFile(System.IO.StreamWriter file)
         {

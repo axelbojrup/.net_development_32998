@@ -120,20 +120,20 @@
             this.radioButton6.UseVisualStyleBackColor = true;
             this.radioButton6.Click += new System.EventHandler(this.five_click);
             // 
-            // button1
+            // button4
             // 
             this.button1.Location = new System.Drawing.Point(85, 217);
-            this.button1.Name = "button1";
+            this.button1.Name = "button4";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 7;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.submit_click);
             // 
-            // button2
+            // button4
             // 
             this.button2.Location = new System.Drawing.Point(85, 246);
-            this.button2.Name = "button2";
+            this.button2.Name = "button4";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 8;
             this.button2.Text = "Cancel";

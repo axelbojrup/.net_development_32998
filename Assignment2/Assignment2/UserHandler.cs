@@ -69,10 +69,15 @@ namespace Assignment2
         {
             return users.FindAll((User u) => { return (u is Guest); });
         }
-        
+
+        public List<User> retrieveAll()
+        {
+            return users;
+        }
 
 
-// Load all user data from “Guests.txt” and “Admins.txt” plain text files and stores them in the User  List member variable.
+
+        // Load all user data from “Guests.txt” and “Admins.txt” plain text files and stores them in the User  List member variable.
 
         public bool LoadAllUsers()
         {

@@ -16,6 +16,7 @@ namespace Assignment2
         List<ListViewItem> checkedUsers;
         UserHandler uh;
         UserListScreenGuest ulsg;
+        UserListScreenModerator ulsm;
 
         int rating;
         public UserRatingDialog(UserHandler uh, List<ListViewItem> checkedUsers, UserListScreenGuest ulsg)
@@ -25,7 +26,15 @@ namespace Assignment2
             this.uh = uh;
             this.ulsg = ulsg;
         }
-        
+
+        public UserRatingDialog(UserHandler uh, List<ListViewItem> checkedUsers, UserListScreenModerator ulsm)
+        {
+            InitializeComponent();
+            this.checkedUsers = checkedUsers;
+            this.uh = uh;
+            this.ulsm = ulsm;
+        }
+
 
         private void cancel_click(object sender, EventArgs e)
         {
@@ -67,7 +76,7 @@ namespace Assignment2
         {
             foreach (ListViewItem lvi in checkedUsers)
             {
-                User u = uh.retrieveGuests().Find((User user) => { return lvi.SubItems[0].Text.Equals(user.GetShortUserString()); });
+                User u = uh.retrieveAll().Find((User user) => { return lvi.SubItems[0].Text.Equals(user.GetFullUserString()); });
                 if(u != null)
                 {
                     u.AddRating(rating);
@@ -75,7 +84,8 @@ namespace Assignment2
                 }
             }
             this.Close();
-            ulsg.reload();
+            if (ulsg != null) ulsg.reload();
+            if (ulsm != null) ulsm.reload();
 
         }
     }
