@@ -122,7 +122,7 @@ namespace Assignment2
                 
                
             }
-
+            sr.Close();
             sr = new System.IO.StreamReader("Admin.txt");
 
             while (!sr.EndOfStream)
@@ -154,32 +154,45 @@ namespace Assignment2
                 }
             }
 
-
-            return true;//????
+            sr.Close();
+            return true;
         }
 
-// Save all user data from “Guests.txt” and “Admins.txt”  plain txt  files  using  the  WriteGuestToFile(...)  and WriteAdminToFile(...) methods below
+        // Save all user data from “Guests.txt” and “Admins.txt”  plain txt  files  using  the  WriteGuestToFile(...)  and WriteAdminToFile(...) methods below
         public bool SaveAllUsers()
         {
-            System.IO.StreamWriter fileAdmin = new System.IO.StreamWriter("testAdmin.txt");
-            System.IO.StreamWriter fileGuest = new System.IO.StreamWriter("testGuest.txt");
-
-            foreach (User u in users)
+            try
             {
-                if (u is Admin)
+
+                System.IO.StreamWriter fileAdmin = new System.IO.StreamWriter("Admin.txt");
+                System.IO.StreamWriter fileGuest = new System.IO.StreamWriter("Guests.txt");
+
+                foreach (User u in users)
                 {
-                    ((Admin)u).WriteAdminToFile(fileAdmin);
+                    if (u is Admin)
+                    {
+                        ((Admin)u).WriteAdminToFile(fileAdmin);
+                    }
                 }
-                else
+
+                fileAdmin.Close();
+                foreach (User u in users)
                 {
-                    ((Guest)u).WriteGuestToFile(fileGuest);
+                    if (u is Guest)
+                    {
+                        ((Guest)u).WriteGuestToFile(fileGuest);
+                    }
                 }
+                fileGuest.Close();
+
+                return true;
+
             }
-
-            fileAdmin.Close();
-            fileGuest.Close();
-
-            return true;
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
         }
     }
 }

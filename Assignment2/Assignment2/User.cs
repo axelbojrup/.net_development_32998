@@ -56,9 +56,17 @@ namespace Assignment2
             if (ratingsCount == 0) averageRating = rating;
             else
             {
-                averageRating = roundDown((averageRating + rating)/2);
+                ratingsCount++;
+                if (averageRating == 0)
+                {
+                    averageRating = roundDown((rating/4));
+                }
+                else
+                {
+                    averageRating = roundDown((averageRating + rating) / 2);
+                }
+                
             }
-            ratingsCount++;
         }
 
         public abstract string GetFullUserString();
