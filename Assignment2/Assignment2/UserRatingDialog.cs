@@ -71,6 +71,7 @@ namespace Assignment2
                 if(u != null)
                 {
                     u.AddRating(rating);
+                    uh.SaveAllUsers();
                 }
             }
             this.Close();

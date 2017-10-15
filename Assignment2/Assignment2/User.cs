@@ -29,6 +29,12 @@ namespace Assignment2
             }
         }
 
+        protected bool varAppropriateSize()
+        {
+
+            return true;
+        }
+
         protected double roundDown(double d)
         {
             return Math.Floor(d * 100) / 100;
