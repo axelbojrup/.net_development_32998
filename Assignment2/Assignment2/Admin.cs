@@ -21,9 +21,7 @@ namespace Assignment2
             this.ratingsCount = ratingsCount;
             this.averageRating = roundDown(averageRatingAdmin);
             this.adminType = AdminType;
-
-            //not sure of line below
-            //if (Type.Equals(adminType.GetType(), AdminType)) adminType = Admin.AdminType.SuperAdmin;
+            
 
         }
 
@@ -49,7 +47,7 @@ namespace Assignment2
 // overrides  base  class version, returns a string with username, firstName, lastName, and AdminType
         public override string GetFullUserString()
         {
-            return (username + firstName + lastName + adminType);
+            return (username + " " + firstName + " " + lastName + " " + adminType);
         }
     }
 }

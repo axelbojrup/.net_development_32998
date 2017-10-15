@@ -51,9 +51,18 @@ namespace Assignment2
             }
         }
 
+        public void remove(User u)
+        {
+            users.Remove(u);
+        }
         public void addGuest(Guest g)
         {
             users.Add(g);
+        }
+
+        public void addAdmin(Admin a)
+        {
+            users.Add(a);
         }
 
         public User login(string username, string password)
@@ -146,7 +155,7 @@ namespace Assignment2
             }
 
 
-            return true;
+            return true;//????
         }
 
 // Save all user data from “Guests.txt” and “Admins.txt”  plain txt  files  using  the  WriteGuestToFile(...)  and WriteAdminToFile(...) methods below

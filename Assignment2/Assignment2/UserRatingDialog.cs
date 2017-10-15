@@ -17,6 +17,7 @@ namespace Assignment2
         UserHandler uh;
         UserListScreenGuest ulsg;
         UserListScreenModerator ulsm;
+        UserListScreenAdmin ulsa;
 
         int rating;
         public UserRatingDialog(UserHandler uh, List<ListViewItem> checkedUsers, UserListScreenGuest ulsg)
@@ -33,6 +34,14 @@ namespace Assignment2
             this.checkedUsers = checkedUsers;
             this.uh = uh;
             this.ulsm = ulsm;
+        }
+
+        public UserRatingDialog(UserHandler uh, List<ListViewItem> checkedUsers, UserListScreenAdmin ulsa)
+        {
+            InitializeComponent();
+            this.checkedUsers = checkedUsers;
+            this.uh = uh;
+            this.ulsa = ulsa;
         }
 
 
@@ -74,19 +83,36 @@ namespace Assignment2
 
         private void submit_click(object sender, EventArgs e)
         {
-            foreach (ListViewItem lvi in checkedUsers)
-            {
-                User u = uh.retrieveAll().Find((User user) => { return lvi.SubItems[0].Text.Equals(user.GetFullUserString()); });
-                if(u != null)
-                {
-                    u.AddRating(rating);
-                    uh.SaveAllUsers();
-                }
-            }
-            this.Close();
-            if (ulsg != null) ulsg.reload();
-            if (ulsm != null) ulsm.reload();
 
+            if (ulsg != null) //Guest case
+            {
+                foreach (ListViewItem lvi in checkedUsers)
+                {
+                    User u = uh.retrieveGuests().Find((User user) => { return lvi.SubItems[0].Text.Equals(user.GetShortUserString()); });
+                    if (u != null)
+                    {
+                        u.AddRating(rating);
+                        uh.SaveAllUsers();
+                    }
+                }
+                this.Close();
+                ulsg.reload();
+            }
+            else // Admin case
+            {
+                foreach (ListViewItem lvi in checkedUsers)
+                {
+                    User u = uh.retrieveAll().Find((User user) => { return lvi.SubItems[0].Text.Equals(user.GetFullUserString()); });
+                    if (u != null)
+                    {
+                        u.AddRating(rating);
+                        uh.SaveAllUsers();
+                    }
+                }
+                this.Close();
+                if (ulsm != null) ulsm.reload();
+                if (ulsa != null) ulsa.reload();
+            }
         }
     }
 }

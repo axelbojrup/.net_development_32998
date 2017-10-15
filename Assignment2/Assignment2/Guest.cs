@@ -26,6 +26,11 @@ namespace Assignment2
             return dateOfBirth.ToString("dd-MM-yyyy");
         }
 
+        public Admin makeAdmin()
+        {
+            return new Admin(username, password, firstName, lastName, ratingsCount, averageRating, Admin.AdminType.Moderator);
+        }
+
         // writes all member variable of this Guest object (including those in the User  base  class) to the  end of  the file  passed  in  as  a parameter  and returns true if the write was successful.
         public bool WriteGuestToFile(System.IO.StreamWriter file)
         {
@@ -49,7 +54,7 @@ namespace Assignment2
 // overrides  base  class  version, returns a string with firstName, lastName, and dateOfBirth.
         public override string GetFullUserString()
         {
-            return firstName + lastName + getDate();
+            return firstName + " " + lastName + " " + getDate();
         }
     }
 }

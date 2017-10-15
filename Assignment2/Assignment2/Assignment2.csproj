@@ -54,6 +54,12 @@
     <Compile Include="LoginScreen.Designer.cs">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="MakeUserAdminDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakeUserAdminDialog.Designer.cs">
+      <DependentUpon>MakeUserAdminDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="NewUserScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
     <Compile Include="UserHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserListScreenAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserListScreenAdmin.Designer.cs">
+      <DependentUpon>UserListScreenAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserListScreenGuest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,9 @@
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MakeUserAdminDialog.resx">
+      <DependentUpon>MakeUserAdminDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewUserScreen.resx">
       <DependentUpon>NewUserScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +112,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserListScreenAdmin.resx">
+      <DependentUpon>UserListScreenAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserListScreenGuest.resx">
       <DependentUpon>UserListScreenGuest.cs</DependentUpon>

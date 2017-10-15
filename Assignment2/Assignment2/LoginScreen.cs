@@ -39,6 +39,7 @@ namespace Assignment2
                 uh.LoggedInUser = u;
                 if(u is Guest) new UserListScreenGuest(uh).Show();
                 if (u is Admin && ((Admin)u).adminType == Admin.AdminType.Moderator) new UserListScreenModerator(uh).Show();
+                if (u is Admin && ((Admin)u).adminType == Admin.AdminType.SuperAdmin) new UserListScreenAdmin(uh).Show();
                 this.label1.Text = "";
                 this.textBox1.Text = "";
                 this.textBox2.Text = "";

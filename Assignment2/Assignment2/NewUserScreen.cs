@@ -27,7 +27,7 @@ namespace Assignment2
 
         private bool nameOnFormat(string s)
         {
-            if (Regex.IsMatch(s, "^[A-Z]{1}[A-Z][a-z]{1,}$")) return true;
+            if (Regex.IsMatch(s, "^[A-Z]{1}[A-Za-z]{1,}$")) return true;
             return false;
         }
 

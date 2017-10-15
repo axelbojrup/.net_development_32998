@@ -43,7 +43,7 @@ namespace Assignment2
 // concrete  method,  checks  the  username  and  password parameters against  the member  variables and  return  true  if  they match and returns false otherwise.
         public bool CheckUserNameAndPassword(string username, string password)
         {
-            return (this.username == username && this.username == username);
+            return (this.username == username && this.password == password);
         }
 // concrete method, returns astring containing the username and first name only.
         public string GetShortUserString()
